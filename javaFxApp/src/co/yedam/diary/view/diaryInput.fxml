@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -15,7 +16,7 @@
    <top>
       <HBox fx:id="hbox" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="23.0" prefWidth="521.0">
+            <AnchorPane prefHeight="30.0" prefWidth="433.0">
                <children>
                   <Label contentDisplay="RIGHT" layoutX="-1.0" layoutY="1.0" prefHeight="21.0" prefWidth="200.0" text="일기쓰기">
                      <font>
@@ -24,10 +25,21 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#diaryListView" prefHeight="29.0" prefWidth="68.0" text="Home" textFill="#e61207">
+            <Button fx:id="btnList" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goList" prefHeight="30.0" prefWidth="46.0" text="list" textFill="#0930d9">
                <font>
                   <Font name="Hobo BT" size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnHome" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goHome" prefHeight="30.0" prefWidth="64.0" text="Home" textFill="#e61207">
+               <font>
+                  <Font name="Hobo BT" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </HBox.margin>
             </Button>
          </children>
          <padding>
@@ -79,19 +91,15 @@
                   <Insets bottom="13.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="txtContents" alignment="TOP_LEFT" prefHeight="200.0" prefWidth="482.0">
-               <VBox.margin>
-                  <Insets bottom="13.0" />
-               </VBox.margin>
-            </TextField>
+            <TextArea fx:id="txtContents" prefHeight="200.0" prefWidth="200.0" />
             <HBox prefHeight="41.0" prefWidth="588.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#dyInsert" text="저장하기">
+                  <Button mnemonicParsing="false" onAction="#dyInsert" text="Save">
                      <HBox.margin>
                         <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#diaryListView" text="취소하기">
+                  <Button mnemonicParsing="false" onAction="#dyDelete" text="Canel">
                      <HBox.margin>
                         <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
                      </HBox.margin>

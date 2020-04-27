@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.yedam.diary.view.calendar.CalendarController">
+   <top>
+      <HBox fx:id="hbox" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="30.0" prefWidth="108.0">
+               <children>
+                  <Label text="Daily Note">
+                     <font>
+                        <Font name="Hobo BT" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="299.0">
+               <children>
+                  <Button fx:id="btnLeft" mnemonicParsing="false" onAction="#leftClick" prefHeight="23.0" prefWidth="44.0" text="&lt;&lt;">
+                     <font>
+                        <Font name="Hobo BT" size="12.0" />
+                     </font></Button>
+                  <Label fx:id="yearTop" contentDisplay="CENTER" prefHeight="24.0" prefWidth="123.0" style="-fx-alignment: center;" text="Label" />
+                  <Button fx:id="btnRight" mnemonicParsing="false" onAction="#rightClick" prefHeight="23.0" prefWidth="49.0" text="&gt;&gt;" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="175.0">
+               <children>
+                  <Button fx:id="btnList" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goList" prefHeight="30.0" prefWidth="42.0" text="list" textFill="#2509e5">
+                     <font>
+                        <Font name="Hobo BT" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane fx:id="calDay" gridLinesVisible="true" prefHeight="22.0" prefWidth="580.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="일" />
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="월" GridPane.columnIndex="1" />
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="화" GridPane.columnIndex="2" />
+                  <Label contentDisplay="CENTER" prefHeight="26.0" prefWidth="83.0" style="-fx-alignment: center;" text="수" GridPane.columnIndex="3" />
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="목" GridPane.columnIndex="4" />
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="금" GridPane.columnIndex="5" />
+                  <Label contentDisplay="CENTER" prefHeight="15.0" prefWidth="83.0" style="-fx-alignment: center;" text="토" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="calDate" gridLinesVisible="true" prefHeight="324.0" prefWidth="580.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

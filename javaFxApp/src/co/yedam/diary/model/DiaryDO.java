@@ -6,6 +6,7 @@ public class DiaryDO {
 	private String weather;
 	private String title;
 	private String contents;
+	
 	public String getIdx() {
 		return idx;
 	}
@@ -39,10 +40,5 @@ public class DiaryDO {
 	@Override
 	public String toString() {
 		return "NO." + idx + "   DATE. " + dDate + "   TITLE. " + title;
-	}
-	
-	
-	
-	
-	
+	}	
 }

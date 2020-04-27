@@ -29,6 +29,8 @@ public class ListContraller implements Initializable {
 	@FXML
 	Button button;
 	@FXML
+	Button btnHome;
+	@FXML
 	HBox hbox;
 
 	@Override
@@ -47,7 +49,7 @@ public class ListContraller implements Initializable {
 				checkValue();
 				// 새로운 창 띄우기 (새 스테이지 생성 -> 씬 추가 -> 레이아웃 추가)
 				Stage stage = new Stage();
-				Parent root = FXMLLoader.load(getClass().getResource("../view/diaryPrint.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("diaryPrint.fxml"));
 				Scene sc = new Scene(root);
 				stage.setScene(sc);
 				stage.show();
@@ -65,6 +67,7 @@ public class ListContraller implements Initializable {
 	private void checkValue() {
 		String obj = listView.getSelectionModel().getSelectedItem().getIdx();
 		System.out.println(obj);
+		DataModel.check.add(0, "num");
 		DataModel.num.add(obj);
 
 	}
@@ -90,5 +93,24 @@ public class ListContraller implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	public void goHomeView(ActionEvent event) {
+		try {
+			Stage stage = new Stage();
+
+			Parent root = FXMLLoader.load(getClass().getResource("./calendar/calendar.fxml"));
+			Scene scene = new Scene(root, 600, 430);
+			stage.setScene(scene);
+			stage.show();
+			
+			// 메인 창 닫아주기
+	          Stage main = (Stage) rootLayout.getScene().getWindow();
+	          main.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 }

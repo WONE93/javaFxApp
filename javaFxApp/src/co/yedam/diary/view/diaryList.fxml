@@ -12,9 +12,9 @@
 
 <BorderPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.yedam.diary.view.ListContraller">
    <top>
-      <HBox fx:id="hbox" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="hbox" alignment="TOP_RIGHT" prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="23.0" prefWidth="521.0">
+            <AnchorPane prefHeight="56.0" prefWidth="381.0">
                <children>
                   <Label contentDisplay="RIGHT" layoutX="-1.0" layoutY="1.0" prefHeight="21.0" prefWidth="200.0" text="일기목록">
                      <font>
@@ -22,11 +22,28 @@
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </padding>
             </AnchorPane>
-            <Button fx:id="button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#diaryInputView" prefHeight="29.0" prefWidth="99.0" text="작성하기" textFill="#0b0101">
+            <Button fx:id="button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#diaryInputView" prefHeight="30.0" prefWidth="62.0" text="Wirte" textFill="#0b0101">
                <font>
                   <Font name="Hobo BT" size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnHome" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goHomeView" prefHeight="30.0" prefWidth="69.0" text="Home" textFill="#e00a0a">
+               <font>
+                  <Font name="Hobo BT" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+               </HBox.margin>
             </Button>
          </children>
          <padding>
@@ -35,9 +52,9 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="318.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listView" prefHeight="375.0" prefWidth="600.0" />
+            <ListView fx:id="listView" prefHeight="341.0" prefWidth="600.0" />
          </children>
       </VBox>
    </center>
